@@ -4,6 +4,8 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:weather_app/src/models/location.dart';
 import 'package:weather_app/src/models/serializers.dart';
+import 'package:weather_app/src/models/weather.dart';
+import 'package:weather_app/src/models/weather_id.dart';
 
 part 'app_state.g.dart';
 
@@ -15,6 +17,10 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   AppState._();
 
   Location? get location;
+
+  WeatherId? get weatherId;
+
+  Weather? get weather;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 
