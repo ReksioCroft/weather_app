@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
 import 'package:redux/redux.dart';
+import 'package:weather_app/src/actions/get_location.dart';
 import 'package:weather_app/src/actions/get_weather.dart';
 import 'package:weather_app/src/data/location_api.dart';
 import 'package:weather_app/src/data/weather_api.dart';
@@ -18,6 +19,7 @@ void main() {
   final AppState initialState = AppState();
   final Store<AppState> store = Store<AppState>(reducer, initialState: initialState, middleware: middleware.middleware);
 
+  store.dispatch(GetLocation());
   store.dispatch(GetWeather());
 
   runApp(MyApp(

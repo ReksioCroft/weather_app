@@ -21,7 +21,10 @@ class WeatherPage extends StatelessWidget {
           }
           return Column(
             children: <Widget>[
+              Text('Current Weather State: ${weather.weatherStateName}'),
               Text('temp: ${weather.theTemp}'),
+              Text('temp max: ${weather.maxTemp}'),
+              Text('temp in: ${weather.minTemp}'),
             ],
           );
         },
