@@ -18,17 +18,17 @@ class _$WeatherSerializer implements StructuredSerializer<Weather> {
   Iterable<Object?> serialize(Serializers serializers, Weather object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'weatherStateName',
-      serializers.serialize(object.weatherStateName,
+      'weather_state_name',
+      serializers.serialize(object.weather_state_name,
           specifiedType: const FullType(String)),
-      'minTemp',
-      serializers.serialize(object.minTemp,
+      'min_temp',
+      serializers.serialize(object.min_temp,
           specifiedType: const FullType(double)),
-      'maxTemp',
-      serializers.serialize(object.maxTemp,
+      'max_temp',
+      serializers.serialize(object.max_temp,
           specifiedType: const FullType(double)),
-      'theTemp',
-      serializers.serialize(object.theTemp,
+      'the_temp',
+      serializers.serialize(object.the_temp,
           specifiedType: const FullType(double)),
     ];
 
@@ -46,20 +46,20 @@ class _$WeatherSerializer implements StructuredSerializer<Weather> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'weatherStateName':
-          result.weatherStateName = serializers.deserialize(value,
+        case 'weather_state_name':
+          result.weather_state_name = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'minTemp':
-          result.minTemp = serializers.deserialize(value,
+        case 'min_temp':
+          result.min_temp = serializers.deserialize(value,
               specifiedType: const FullType(double)) as double;
           break;
-        case 'maxTemp':
-          result.maxTemp = serializers.deserialize(value,
+        case 'max_temp':
+          result.max_temp = serializers.deserialize(value,
               specifiedType: const FullType(double)) as double;
           break;
-        case 'theTemp':
-          result.theTemp = serializers.deserialize(value,
+        case 'the_temp':
+          result.the_temp = serializers.deserialize(value,
               specifiedType: const FullType(double)) as double;
           break;
       }
@@ -71,28 +71,28 @@ class _$WeatherSerializer implements StructuredSerializer<Weather> {
 
 class _$Weather extends Weather {
   @override
-  final String weatherStateName;
+  final String weather_state_name;
   @override
-  final double minTemp;
+  final double min_temp;
   @override
-  final double maxTemp;
+  final double max_temp;
   @override
-  final double theTemp;
+  final double the_temp;
 
   factory _$Weather([void Function(WeatherBuilder)? updates]) =>
       (new WeatherBuilder()..update(updates)).build();
 
   _$Weather._(
-      {required this.weatherStateName,
-      required this.minTemp,
-      required this.maxTemp,
-      required this.theTemp})
+      {required this.weather_state_name,
+      required this.min_temp,
+      required this.max_temp,
+      required this.the_temp})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        weatherStateName, 'Weather', 'weatherStateName');
-    BuiltValueNullFieldError.checkNotNull(minTemp, 'Weather', 'minTemp');
-    BuiltValueNullFieldError.checkNotNull(maxTemp, 'Weather', 'maxTemp');
-    BuiltValueNullFieldError.checkNotNull(theTemp, 'Weather', 'theTemp');
+        weather_state_name, 'Weather', 'weather_state_name');
+    BuiltValueNullFieldError.checkNotNull(min_temp, 'Weather', 'min_temp');
+    BuiltValueNullFieldError.checkNotNull(max_temp, 'Weather', 'max_temp');
+    BuiltValueNullFieldError.checkNotNull(the_temp, 'Weather', 'the_temp');
   }
 
   @override
@@ -106,27 +106,27 @@ class _$Weather extends Weather {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Weather &&
-        weatherStateName == other.weatherStateName &&
-        minTemp == other.minTemp &&
-        maxTemp == other.maxTemp &&
-        theTemp == other.theTemp;
+        weather_state_name == other.weather_state_name &&
+        min_temp == other.min_temp &&
+        max_temp == other.max_temp &&
+        the_temp == other.the_temp;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, weatherStateName.hashCode), minTemp.hashCode),
-            maxTemp.hashCode),
-        theTemp.hashCode));
+        $jc($jc($jc(0, weather_state_name.hashCode), min_temp.hashCode),
+            max_temp.hashCode),
+        the_temp.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Weather')
-          ..add('weatherStateName', weatherStateName)
-          ..add('minTemp', minTemp)
-          ..add('maxTemp', maxTemp)
-          ..add('theTemp', theTemp))
+          ..add('weather_state_name', weather_state_name)
+          ..add('min_temp', min_temp)
+          ..add('max_temp', max_temp)
+          ..add('the_temp', the_temp))
         .toString();
   }
 }
@@ -134,32 +134,32 @@ class _$Weather extends Weather {
 class WeatherBuilder implements Builder<Weather, WeatherBuilder> {
   _$Weather? _$v;
 
-  String? _weatherStateName;
-  String? get weatherStateName => _$this._weatherStateName;
-  set weatherStateName(String? weatherStateName) =>
-      _$this._weatherStateName = weatherStateName;
+  String? _weather_state_name;
+  String? get weather_state_name => _$this._weather_state_name;
+  set weather_state_name(String? weather_state_name) =>
+      _$this._weather_state_name = weather_state_name;
 
-  double? _minTemp;
-  double? get minTemp => _$this._minTemp;
-  set minTemp(double? minTemp) => _$this._minTemp = minTemp;
+  double? _min_temp;
+  double? get min_temp => _$this._min_temp;
+  set min_temp(double? min_temp) => _$this._min_temp = min_temp;
 
-  double? _maxTemp;
-  double? get maxTemp => _$this._maxTemp;
-  set maxTemp(double? maxTemp) => _$this._maxTemp = maxTemp;
+  double? _max_temp;
+  double? get max_temp => _$this._max_temp;
+  set max_temp(double? max_temp) => _$this._max_temp = max_temp;
 
-  double? _theTemp;
-  double? get theTemp => _$this._theTemp;
-  set theTemp(double? theTemp) => _$this._theTemp = theTemp;
+  double? _the_temp;
+  double? get the_temp => _$this._the_temp;
+  set the_temp(double? the_temp) => _$this._the_temp = the_temp;
 
   WeatherBuilder();
 
   WeatherBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _weatherStateName = $v.weatherStateName;
-      _minTemp = $v.minTemp;
-      _maxTemp = $v.maxTemp;
-      _theTemp = $v.theTemp;
+      _weather_state_name = $v.weather_state_name;
+      _min_temp = $v.min_temp;
+      _max_temp = $v.max_temp;
+      _the_temp = $v.the_temp;
       _$v = null;
     }
     return this;
@@ -180,14 +180,14 @@ class WeatherBuilder implements Builder<Weather, WeatherBuilder> {
   _$Weather build() {
     final _$result = _$v ??
         new _$Weather._(
-            weatherStateName: BuiltValueNullFieldError.checkNotNull(
-                weatherStateName, 'Weather', 'weatherStateName'),
-            minTemp: BuiltValueNullFieldError.checkNotNull(
-                minTemp, 'Weather', 'minTemp'),
-            maxTemp: BuiltValueNullFieldError.checkNotNull(
-                maxTemp, 'Weather', 'maxTemp'),
-            theTemp: BuiltValueNullFieldError.checkNotNull(
-                theTemp, 'Weather', 'theTemp'));
+            weather_state_name: BuiltValueNullFieldError.checkNotNull(
+                weather_state_name, 'Weather', 'weather_state_name'),
+            min_temp: BuiltValueNullFieldError.checkNotNull(
+                min_temp, 'Weather', 'min_temp'),
+            max_temp: BuiltValueNullFieldError.checkNotNull(
+                max_temp, 'Weather', 'max_temp'),
+            the_temp: BuiltValueNullFieldError.checkNotNull(
+                the_temp, 'Weather', 'the_temp'));
     replace(_$result);
     return _$result;
   }

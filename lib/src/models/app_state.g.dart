@@ -26,13 +26,6 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Location)));
     }
-    value = object.weatherId;
-    if (value != null) {
-      result
-        ..add('weatherId')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(WeatherId)));
-    }
     value = object.weather;
     if (value != null) {
       result
@@ -58,10 +51,6 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
           result.location.replace(serializers.deserialize(value,
               specifiedType: const FullType(Location))! as Location);
           break;
-        case 'weatherId':
-          result.weatherId.replace(serializers.deserialize(value,
-              specifiedType: const FullType(WeatherId))! as WeatherId);
-          break;
         case 'weather':
           result.weather.replace(serializers.deserialize(value,
               specifiedType: const FullType(Weather))! as Weather);
@@ -77,14 +66,12 @@ class _$AppState extends AppState {
   @override
   final Location? location;
   @override
-  final WeatherId? weatherId;
-  @override
   final Weather? weather;
 
   factory _$AppState([void Function(AppStateBuilder)? updates]) =>
       (new AppStateBuilder()..update(updates)).build();
 
-  _$AppState._({this.location, this.weatherId, this.weather}) : super._();
+  _$AppState._({this.location, this.weather}) : super._();
 
   @override
   AppState rebuild(void Function(AppStateBuilder) updates) =>
@@ -98,21 +85,18 @@ class _$AppState extends AppState {
     if (identical(other, this)) return true;
     return other is AppState &&
         location == other.location &&
-        weatherId == other.weatherId &&
         weather == other.weather;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc(0, location.hashCode), weatherId.hashCode), weather.hashCode));
+    return $jf($jc($jc(0, location.hashCode), weather.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AppState')
           ..add('location', location)
-          ..add('weatherId', weatherId)
           ..add('weather', weather))
         .toString();
   }
@@ -125,11 +109,6 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   LocationBuilder get location => _$this._location ??= new LocationBuilder();
   set location(LocationBuilder? location) => _$this._location = location;
 
-  WeatherIdBuilder? _weatherId;
-  WeatherIdBuilder get weatherId =>
-      _$this._weatherId ??= new WeatherIdBuilder();
-  set weatherId(WeatherIdBuilder? weatherId) => _$this._weatherId = weatherId;
-
   WeatherBuilder? _weather;
   WeatherBuilder get weather => _$this._weather ??= new WeatherBuilder();
   set weather(WeatherBuilder? weather) => _$this._weather = weather;
@@ -140,7 +119,6 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
     final $v = _$v;
     if ($v != null) {
       _location = $v.location?.toBuilder();
-      _weatherId = $v.weatherId?.toBuilder();
       _weather = $v.weather?.toBuilder();
       _$v = null;
     }
@@ -164,16 +142,12 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
     try {
       _$result = _$v ??
           new _$AppState._(
-              location: _location?.build(),
-              weatherId: _weatherId?.build(),
-              weather: _weather?.build());
+              location: _location?.build(), weather: _weather?.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'location';
         _location?.build();
-        _$failedField = 'weatherId';
-        _weatherId?.build();
         _$failedField = 'weather';
         _weather?.build();
       } catch (e) {

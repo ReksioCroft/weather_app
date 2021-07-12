@@ -12,13 +12,13 @@ abstract class Weather implements Built<Weather, WeatherBuilder> {
 
   Weather._();
 
-  String get weatherStateName;
+  String get weather_state_name;
 
-  double get minTemp;
+  double get min_temp;
 
-  double get maxTemp;
+  double get max_temp;
 
-  double get theTemp;
+  double get the_temp;
 
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 

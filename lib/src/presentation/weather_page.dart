@@ -19,13 +19,15 @@ class WeatherPage extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           }
-          return Column(
-            children: <Widget>[
-              Text('Current Weather State: ${weather.weatherStateName}'),
-              Text('temp: ${weather.theTemp}'),
-              Text('temp max: ${weather.maxTemp}'),
-              Text('temp in: ${weather.minTemp}'),
-            ],
+          return Center(
+            child: Column(
+              children: <Widget>[
+                Text('Current Weather State: ${weather.weather_state_name}'),
+                Text('temp: ${weather.the_temp}'),
+                Text('temp max: ${weather.max_temp}'),
+                Text('temp in: ${weather.min_temp}'),
+              ],
+            ),
           );
         },
       ),
