@@ -12,13 +12,13 @@ Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
 ]);
 
 AppState _getLocationSuccessful(AppState state, GetLocationSuccessful action) {
-  return state.rebuild((b) {
+  return state.rebuild((AppStateBuilder b) {
     b.location = action.location.toBuilder();
   });
 }
 
 AppState _getWeatherSuccessful(AppState state, GetWeatherSuccessful action) {
-  return state.rebuild((b) {
+  return state.rebuild((AppStateBuilder b) {
     b.weather = action.weather.toBuilder();
   });
 }

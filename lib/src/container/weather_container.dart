@@ -11,7 +11,7 @@ class WeatherContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, Weather?>(
-      converter: (Store<AppState>store) => store.state.weather,
+      converter: (Store<AppState> store) => store.state.weather,
       builder: builder,
     );
   }

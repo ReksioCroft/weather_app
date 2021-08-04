@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StoreProvider(
+    return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
         title: 'Flutter Demo',

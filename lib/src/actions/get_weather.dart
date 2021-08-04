@@ -9,4 +9,3 @@ class GetWeather with _$GetWeather implements AppAction {
   @Implements(ErrorAction)
   const factory GetWeather.error(Object error, StackTrace stackTrace) = GetWeatherError;
 }
-
