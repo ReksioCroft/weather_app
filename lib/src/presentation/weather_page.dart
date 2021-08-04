@@ -22,10 +22,10 @@ class WeatherPage extends StatelessWidget {
           return Center(
             child: Column(
               children: <Widget>[
-                Text('Current Weather State: ${weather.weather_state_name}'),
-                Text('temp: ${weather.the_temp}'),
-                Text('temp max: ${weather.max_temp}'),
-                Text('temp in: ${weather.min_temp}'),
+                Text('Current Weather State: ${weather.weatherStateName}'),
+                Text('Temp: ${weather.theTemp.toStringAsFixed(2)}'),
+                Text('Max Temp: ${weather.maxTemp.toStringAsFixed(2)}'),
+                Text('Min Temp: ${weather.minTemp.toStringAsFixed(2)}'),
               ],
             ),
           );
