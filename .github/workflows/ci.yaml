@@ -14,7 +14,7 @@ jobs:
       - name: Setup project
         run: flutter pub get
       - name: Format code
-        run: flutter format -l 140 --set-exit-if-changed .
+        run: flutter format -l 140 .
   analyze-code:
     runs-on: ubuntu-latest
     steps:
